@@ -1,0 +1,68 @@
+.lectures {
+  background: #fff;
+  min-width: 420px;
+  padding: 50px 0px 50px 0px;
+  height: calc(100vh - 120px);
+  position: fixed;
+  top: 120px;
+  left: 100%;
+  transform: translateX(-100%);
+  border-left: 1px solid #D6DDE7;
+  @media (max-width:1600px){
+    top: 90px;
+  }
+  @media (max-width:1000px){
+    position: relative;
+  }
+  @media (max-width:420px){
+    min-width: unset;
+  }
+
+  .lectures__list {
+    overflow-y: scroll;
+    max-height: calc(100vh - 120px);
+    padding: 0px 0px 50px 0px;
+
+    .lectures__item {
+      padding: 0px 55px 0px 50px;
+
+      .lectures__btn {
+        background: none;
+        border: none;
+        font-family: 'Gilroy Medium';
+        text-align: start;
+        cursor: pointer;
+        margin: 0px 0px 40px 0px;
+
+        .lectures__count {
+          font-weight: 600;
+          font-size: 10px;
+          line-height: 12px;
+          text-transform: uppercase;
+          color: #878787;
+          margin: 0px 0px 5px 0px;
+        }
+
+        .lectures__title {
+          font-family: 'Gilroy Medium';
+          font-weight: 500;
+          font-size: 13px;
+          line-height: 140%;
+          color: #000000;
+        }
+
+        .lecture__time {
+          font-size: 11px;
+          line-height: 13px;
+          color: #878787;
+          background: url("../img/clock.svg");
+          padding: 0px 0px 0px 15px;
+          background-repeat: no-repeat;
+          background-position: left center;
+        }
+      }
+
+
+    }
+  }
+}
