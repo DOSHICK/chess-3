@@ -1,0 +1,76 @@
+// stable.scss
+body {
+  font-family: 'Gilroy Medium';
+}
+
+main {
+  position: relative;
+
+  @media (max-width:1600px) {
+    display: grid;
+    grid-template-columns: 1fr 420px;
+    grid-template-rows: 90px 1fr;
+    grid-template-areas: "nav nav"
+      "theory theory";
+
+    .nav {
+      grid-area: nav;
+    }
+
+    .theory {
+      grid-area: theory;
+    }
+
+    .lectures {
+      grid-area: lecture;
+    }
+  }
+
+  @media (max-width: 1000px) {
+    grid-template-columns: 1fr;
+    grid-template-rows: 90px auto auto;
+    grid-template-areas: "nav"
+      "theory"
+      "lecture";
+
+    .nav {
+      grid-area: nav;
+    }
+
+    .theory {
+      grid-area: theory;
+    }
+
+    .lectures {
+      grid-area: lecture;
+    }
+  }
+}
+
+.wrapper {
+  height: 100%;
+  width: 100%;
+}
+
+.lessons {
+  width: 100%;
+
+}
+
+h2 {
+  font-size: 21px;
+  font-weight: 600;
+}
+
+h3 {
+  font-size: 16px;
+  line-height: 140%;
+}
+
+h4 {
+  font-size: 12px;
+}
+
+h5 {
+  font-size: 10px;
+}
