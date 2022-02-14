@@ -109,16 +109,16 @@ main {
   main {
     display: -ms-grid;
     display: grid;
-    -ms-grid-columns: 1fr 420px;
-        grid-template-columns: 1fr 420px;
+    -ms-grid-columns: 120px 1fr 420px;
+        grid-template-columns: 120px 1fr 420px;
     -ms-grid-rows: 90px 1fr;
         grid-template-rows: 90px 1fr;
-        grid-template-areas: "nav nav" "theory theory";
+        grid-template-areas: "nav    nav     nav" "theory theory  lecture";
   }
   main .nav {
     -ms-grid-row: 1;
     -ms-grid-column: 1;
-    -ms-grid-column-span: 2;
+    -ms-grid-column-span: 3;
     grid-area: nav;
   }
   main .theory {
@@ -128,12 +128,30 @@ main {
     grid-area: theory;
   }
   main .lectures {
+    -ms-grid-row: 2;
+    -ms-grid-column: 3;
     grid-area: lecture;
+  }
+}
+
+@media (min-width: 1600px) {
+  main {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
   }
 }
 
 @media (max-width: 1000px) {
   main {
+    background: #f6f6f6;
     -ms-grid-columns: 1fr;
         grid-template-columns: 1fr;
     -ms-grid-rows: 90px auto auto;
@@ -439,14 +457,14 @@ header.header {
 }
 
 .theory {
-  padding: 40px 480px 0px 160px;
+  padding: 40px 60px 0px 160px;
   background: #f6f6f6;
   min-height: calc(100vh - 120px);
 }
 
 @media (max-width: 1600px) {
   .theory {
-    padding: 40px 480px 0px 30px;
+    padding: 40px 60px 0px 30px;
   }
 }
 
@@ -461,14 +479,6 @@ header.header {
     max-width: 100%;
     padding: 40px 15px 0px 15px;
   }
-}
-
-.theory .theory__block {
-  display: none;
-}
-
-.theory .theory__block.current {
-  display: block;
 }
 
 .theory .theory__block .theory__header {
@@ -555,7 +565,7 @@ header.header {
   }
 }
 
-@media (max-width: 450px) {
+@media (max-width: 650px) {
   .theory .theory__block .theory__header .theory__header-block button.theory__buy {
     max-width: none;
   }
@@ -577,7 +587,7 @@ header.header {
   }
 }
 
-@media (max-width: 450px) {
+@media (max-width: 650px) {
   .theory .theory__block .theory__header .ya-share2 .ya-share2__list {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -603,6 +613,7 @@ header.header {
 
 .theory .theory__block .theory__body {
   background: #ffffff;
+  padding: 0px 0px 15px 0px;
 }
 
 .theory .theory__block .theory__body img,
@@ -614,6 +625,12 @@ header.header {
   margin: 25px 0px 0px 0px;
   padding: 0px 100px 0px 60px;
   max-width: 1040px;
+}
+
+@media (max-width: 620px) {
+  .theory .theory__block .theory__body .theory__text {
+    padding: 0px 30px 0px 30px;
+  }
 }
 
 .theory .theory__block .theory__body .theory__text h3 {
@@ -632,12 +649,6 @@ header.header {
   background: #fff;
   min-width: 420px;
   padding: 50px 0px 50px 0px;
-  height: calc(100vh - 120px);
-  position: fixed;
-  top: 120px;
-  left: 100%;
-  -webkit-transform: translateX(-100%);
-          transform: translateX(-100%);
   border-left: 1px solid #D6DDE7;
 }
 
@@ -650,6 +661,8 @@ header.header {
 @media (max-width: 1000px) {
   .lectures {
     position: relative;
+    background: #f6f6f6;
+    padding: 0px 0px 50px 0px;
   }
 }
 
@@ -660,8 +673,6 @@ header.header {
 }
 
 .lectures .lectures__list {
-  overflow-y: scroll;
-  max-height: calc(100vh - 120px);
   padding: 0px 0px 50px 0px;
 }
 
@@ -669,12 +680,23 @@ header.header {
   padding: 0px 55px 0px 50px;
 }
 
+@media (max-width: 1000px) {
+  .lectures .lectures__list .lectures__item {
+    padding: 0px 55px 0px 85px;
+  }
+}
+
+@media (max-width: 620px) {
+  .lectures .lectures__list .lectures__item {
+    padding: 0px 55px 0px 55px;
+  }
+}
+
 .lectures .lectures__list .lectures__item .lectures__btn {
   background: none;
   border: none;
   font-family: 'Gilroy Medium';
   text-align: start;
-  cursor: pointer;
   margin: 0px 0px 40px 0px;
 }
 

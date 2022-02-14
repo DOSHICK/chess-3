@@ -2,36 +2,36 @@
   background: #fff;
   min-width: 420px;
   padding: 50px 0px 50px 0px;
-  height: calc(100vh - 120px);
-  position: fixed;
-  top: 120px;
-  left: 100%;
-  transform: translateX(-100%);
   border-left: 1px solid #D6DDE7;
   @media (max-width:1600px){
     top: 90px;
   }
   @media (max-width:1000px){
     position: relative;
+    background: #f6f6f6;
+    padding: 0px 0px 50px 0px;
   }
   @media (max-width:420px){
     min-width: unset;
   }
 
   .lectures__list {
-    overflow-y: scroll;
-    max-height: calc(100vh - 120px);
     padding: 0px 0px 50px 0px;
 
     .lectures__item {
       padding: 0px 55px 0px 50px;
+      @media (max-width:1000px){
+        padding: 0px 55px 0px 85px;
+      }
+      @media (max-width:620px){
+        padding: 0px 55px 0px 55px;
+      }
 
       .lectures__btn {
         background: none;
         border: none;
         font-family: 'Gilroy Medium';
         text-align: start;
-        cursor: pointer;
         margin: 0px 0px 40px 0px;
 
         .lectures__count {
