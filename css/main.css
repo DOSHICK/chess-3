@@ -107,6 +107,8 @@ main {
 
 @media (max-width: 1600px) {
   main {
+    max-width: 100%;
+    overflow-x: hidden;
     display: -ms-grid;
     display: grid;
     -ms-grid-columns: 120px 1fr 420px;
@@ -152,10 +154,10 @@ main {
 @media (max-width: 1000px) {
   main {
     background: #f6f6f6;
-    -ms-grid-columns: 1fr;
-        grid-template-columns: 1fr;
-    -ms-grid-rows: 90px auto auto;
-        grid-template-rows: 90px auto auto;
+    -ms-grid-columns: auto 420px;
+        grid-template-columns: auto 420px;
+    -ms-grid-rows: auto auto;
+        grid-template-rows: auto auto;
         grid-template-areas: "nav" "theory" "lecture";
   }
   main .nav {

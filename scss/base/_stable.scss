@@ -7,6 +7,8 @@ main {
   position: relative;
 
   @media (max-width:1600px) {
+    max-width: 100%;
+    overflow-x: hidden;
     display: grid;
     grid-template-columns: 120px 1fr 420px;
     grid-template-rows: 90px 1fr;
@@ -34,8 +36,8 @@ main {
 
   @media (max-width: 1000px) {
     background: #f6f6f6;
-    grid-template-columns: 1fr;
-    grid-template-rows: 90px auto auto;
+    grid-template-columns: auto 420px;
+    grid-template-rows: auto auto;
     grid-template-areas: "nav"
       "theory"
       "lecture";
