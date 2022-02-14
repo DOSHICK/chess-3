@@ -1,0 +1,10 @@
+header.header{
+  display: block;
+  height: 120px;
+  min-width: 100%;
+  background: #f6f6f6;
+  border-bottom: 1px solid #D6DDE7;
+  @media (max-width:1600px){
+    display: none;
+  }
+}
